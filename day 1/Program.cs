@@ -49,7 +49,7 @@
         }
         StreamWriter sw = new StreamWriter("output.txt");//write the output
         sums.Sort();
-        Console.WriteLine(sums.GetRange(0,3).Sum());//print the sum of the first three elves
+        sw.WriteLine(sums.GetRange(0,3).Sum());//print the sum of the first three elves
         sw.Close();
     }
 }
