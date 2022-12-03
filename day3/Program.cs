@@ -3,6 +3,7 @@
     private static void Main(string[] args)
     {
         part1();
+        part2();
     }
     static void part1()
     {
@@ -21,6 +22,10 @@
         sw.WriteLine(sum);//write the output
         sw.Close();//close the file
     }
+    static void part2()
+    {
+
+    }
     static int rucksackpriority(string[] compartmets)
     {//calculates what item type is in both the compartments and returns the item priority
         int res = 0, i = 0;
@@ -30,7 +35,7 @@
             found = compartmets[1].Contains(compartmets[0][i]);//search if the item ot this compartment is in the other compartment
             if (found)
                 res = (compartmets[0][i] >= 'A' && compartmets[0][i] <= 'Z') ? compartmets[0][i] - 38 : compartmets[0][i] - 96;
-            //result = (from 1 through 26 for letters from 'A' to 'Z', from 27 through 52 for letters from 'a' through 'z')
+            //result = (from 1 through 26 for letters from 'a' through 'z', from 27 to 52 for letters from 'A' to 'Z')
             i++;
         } while (!found && i < compartmets[0].Length);
         return res;
